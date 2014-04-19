@@ -1,0 +1,279 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+  
+    <title>jquery Show Hide </title>
+    <!-- Bootstrap core CSS -->
+    <link href="../dist/css/bootstrap.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="navbar-fixed-top.css" rel="stylesheet">
+    <link href="dashboard.css" rel="stylesheet" />
+    <link href="../assets/css/docs.min.css" rel="stylesheet" />
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">jquery Show Hide</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li ><a href="#introduce">Instroduce 插件介绍</a></li>
+                    <li><a href="#Structue">Structue文档结构</a></li>
+                    <li><a href="#Options">Options 插件配置</a></li>
+                    <li class="dropdown">
+                        <a  class="dropdown-toggle" data-toggle="dropdown">Demo<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#eventType">eventType按事件类型</a></li>
+                            <li><a href="#propKey">propKey按属性值</a></li>
+                            <li><a href="#twopropValue">two propValue</a></li>
+                            <li><a href="#twotarget">two target</a></li>
+                            <li><a href="#callEvent">callEvent回调函数</a></li>
+                        </ul>
+                    </li>
+
+                    <!--<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Nav header</li>
+                            <li><a href="#">Separated link</a></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>-->
+                </ul>
+                <!--<ul class="nav navbar-nav navbar-right">
+                    <li><a href="../navbar/">Default</a></li>
+                    <li><a href="../navbar-static-top/">Static top</a></li>
+                    <li class="active"><a href="./">Fixed top</a></li>
+                </ul>-->
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 col-md-2 sidebar">
+                <ul class="nav nav-sidebar">
+                    <li class="active"><a href="#introduce">Instroduce 插件介绍</a></li>
+                    <li><a href="#Structue">Structue文档结构</a></li>
+
+                    <li><a href="#Options">Options 插件配置</a></li>
+                    <li>
+                        <a href="#Demo">Demo</a>
+                        <ul>
+                            <li><a href="#eventType">eventType按事件类型</a></li>
+                            <li><a href="#propKey">propKey按属性值</a></li>
+                            <li><a href="#twopropValue">two propValue</a></li>
+                            <li><a href="#twotarget">two target</a></li>
+                            <li><a href="#callEvent">callEvent回调函数</a></li>
+                        </ul>
+                    </li>
+                  
+                </ul>
+                
+                
+            </div>
+            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                <h1 class="page-header" id="introduce">Instroduce 插件介绍</h1>
+                <div class="row ">
+                    <div class="col-xs-12 col-sm-12 placeholder">
+                        jQuery Show Hide is a simple jquery plugin that specify the selector to show or hide in some events
+                        such as  click,change,blur and so on.
+                        <br /><br />jQuery Show Hide 是一款简易的jquery插件，你可以在一些事件中，例如click,change,blur事件中指定容器的显示或隐藏
+                    </div>
+
+                </div>
+
+                <h1 class="page-header" id="Structue">Structue文档结构</h1>
+                <div class="row ">
+                    <div class="col-xs-12 col-sm-12 placeholder  highlight">
+
+                        assets,dist------just some css,js files of this demo,not core.只是些用于此插件演示的css,js文件，不是核心文件
+                        <br /><br />ShowHide-----core files 插件的核心文件
+                        <br /><br /> jquery-1.10.1.min.js------of course you won't forget 你不会忘记的jquery文件
+                    </div>
+
+                </div>
+
+                <h2 class="sub-header" id="Options">Options 插件配置</h2>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Option</th>
+                                <th>Description</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>eventType</td>
+                                <td>
+                                    event type such as click,change,blur keydown and so on.
+                                    <br />事件类型 如click,change,blur keydown等
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>propKey</td>
+                                <td>
+                                    attribute,such as value,text,checked,name,id,class
+                                    event type such as click,change,blur keydown and so on.
+                                    <br />元素属性 如value,text,checked,name,id,class等
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>propValue</td>
+                                <td>
+                                   the value of the attribute, such as checked,true.
+                                    <br />元素的属性值，例如chekced,true,等
+                                </td>
+
+                            </tr>
+                          
+
+                            <tr>
+                                <td>autoToggle</td>
+                                <td>
+                                    autoToggle=true,the selector will auto toggle in the specified event,at the same time,the 'propKey','propValue' is disable,
+                                    but if autoToggle=false,the 'propKey','propValue' will enable
+                                    <br />是否自动切换显示，隐藏.当autotoggle为true时 propKey,propValue设置无效
+                                </td>
+
+                            </tr>
+
+                            <tr>
+                                <td>target</td>
+                                <td>
+                                    the selector that to show or hide.But no more than 2 elements.
+                                    <br />需要显示，隐藏的选择器，最多可设置两个元素
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>callEvent</td>
+                                <td>
+                                   callback after the event triggered
+                                    <br />当触发事件后的回调函数
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h1 class="page-header" id="Demo">Demo</h1>
+                <h3 id="eventType">eventType按事件类型</h3>
+                <div class="row ">
+                    <div class="col-xs-12 col-sm-12 placeholder">
+                        click event:
+                        <button class="btn-warning" id="btnclickevent">click me</button>
+                        <input type="text" id="clickevent" style="display:none;" value=" click event.I am here!!!!!!" />
+                    </div>
+                </div>
+                <div class="row ">             
+
+                    <div class="col-xs-12 col-sm-12 placeholder">
+                        blur event:
+                        <input type="text" id="txtBlurevent" value="" />
+                        <input type="text" id="Blurevent" style="display:none;" value=" blur event.I am here!!!!!!" />
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-xs-12 col-sm-12 placeholder">
+                        change event:
+                        <input type="text" id="txtchangeevent" value="" />
+                        <input type="text" id="changeevent" style="display:none;" value=" change event.I am here!!!!!!" />
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-xs-12 col-sm-12 placeholder">
+                        focus event:
+                        <input type="text" id="txtfocusevent" value="" />
+                        <input type="text" id="focusevent" style="display:none;" value=" focus event.I am here!!!!!!" />
+                    </div>
+                </div>
+
+                <h3 id="propKey">propKey按属性值</h3>
+                <div class="row ">
+                    <div class="col-xs-12 col-sm-12 placeholder">
+                        value attribute（value属性）:
+                        <input type="text" id="txtValueattr" value="" placeholder="please type firelamb" />
+                        <input type="text" id="Valueattr" style="display:none;" value=" Value attr.I am here!!!!!!" />
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-xs-12 col-sm-12 placeholder">
+                        checked attribute（checked）:
+                      <input type="checkbox" id="cbxCheckedAttr"  />choose me
+                        <input type="text" id="CheckedAttr" style="display:none;" value=" checked attr.I am here!!!!!!" />
+                    </div>
+                </div>
+
+
+                <h3 id="twopropValue">two propValue(两个属性值)</h3>
+                <div class="row ">
+                    <div class="col-xs-12 col-sm-12 placeholder">
+                       2 value of the attribute（value属性）:
+                        <input type="checkbox" id="cbxCheckedAttr1" />choose me
+                        <input type="text" id="CheckedAttr1" style="display:none;" value=" checked attr.I am here!!!!!!" />
+                    </div>
+                </div>
+
+                <h3 id="twotarget">two target(两个元素目标)</h3>
+                <div class="row ">
+                    <div class="col-xs-12 col-sm-12 placeholder">
+                        two target to show or hide:
+                        <input type="checkbox" id="cbxCheckedAttr2" />choose me
+                        <input type="text" id="CheckedAttr3" style="display:none;" value=" checked attr3.I am here!!!!!!" />
+                        <input type="text" id="CheckedAttr4" style="display:none;" value=" checked attr4.I am here!!!!!!" />
+                    </div>
+                </div>
+
+                <h3 id="callEvent">callEvent回调函数</h3>
+                <div class="row ">
+                    <div class="col-xs-12 col-sm-12 placeholder">
+                        callback function（回调函数）:
+                        <input type="text" id="txtcallevent" value="" placeholder="please type firelamb" />
+                        <input type="text" id="callevent" style="display:none;" value=" callback .I am here!!!!!!" />
+                    </div>
+                </div>
+                
+                
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../jquery-1.10.1.min.js"></script>
+    <script src="../dist/js/bootstrap.min.js"></script>
+    <script src="../assets/js/docs.min.js"></script>
+    <script src="FirelambShowHide.min.js"></script>
+    <script src="demo.js"></script>
+</body>
+</html>
