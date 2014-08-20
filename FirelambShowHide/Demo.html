@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="../jquery-1.10.1.min.js"></script>
+  
+    <script src="FirelambShowHide.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+          
+            $("#Checkbox1").FirelambShowHide({
+                eventType: "change"
+                , propKey: "checked"
+                , propValue: "checked,true"
+                , target: "#type"
+                ,autoToggle:"false"
+                , callEvent: function () {
+                    //$("input[name='test']").change();
+                    $this = $("#Checkbox1").prop("checked").toString();
+                    if ($this == "checked" || $this == "true") {
+                        //$("#Text1").show();
+                        //$("#Text2").hide();
+                        $("input[name='test']:checked").change();
+                    }
+                    else {
+                        $("#Text1").hide();
+                        $("#Text2").hide();
+                    }
+                }
+            });
+
+            $("input[name='test']").FirelambShowHide({
+                eventType: "change"
+               , propKey: "value"
+               , propValue: "1"
+               , target: "#Text1,#Text2"
+               , autoToggle: "false"
+                //,copyType:"append"
+            });
+        });
+        </script>
+</head>
+<body>
+    <form id="form1">
+        <input type="text" value="12" />
+    </form>
+    <button type="button" id="12321">vv</button>
+    <button type="button" id="btn">点击恢复</button>
+
+    <button type="button" id="test">test</button>
+    <input id="Checkbox1" type="checkbox" value="11" />是
+  
+    <span id="type" style="display:none">
+    <input id="Radio1" type="radio" name="test" value="1" checked="checked"/>radio1
+    <input id="Radio2" type="radio"  name="test" value="2"/>radio2
+        </span>
+
+    <input id="Text1" type="text" value="111111111111111111111" style="display:none" />
+    <input id="Text2" type="text" value="22222222222222" style="display:none" />
+</body>
+</html>
